@@ -1,0 +1,9 @@
+至于更多地验证规则，比如注册的时候，验证一个email和确认密码的时候，我们怎么需要怎么写的呢？
+
+'email'=>'required|email',
+'password'=>'required|min:6|confirmed',
+'password_confirmation' => 'required|min:6'
+上面我直接给出这两个常用场景的最常见的写法，email就代表验证所填的信息是否是一个正确地邮箱格式了，至于确认密码就使用confirmed来指定，这里注意是confirmed而不是confirme。而且第二次输入密码的字段需要写成password_confirmation这个形式，也就是在视图中，我们会有类似这样的input表单：
+
+<input type="password" name="password" />
+<input type="password" name="password_confirmation" />
